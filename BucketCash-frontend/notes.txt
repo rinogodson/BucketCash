@@ -1,0 +1,5 @@
+Commit:
+- Removed the boilerplate vite logo
+- Added Logo
+- Added BucketContainer.jsx for the container of all the buckets
+
