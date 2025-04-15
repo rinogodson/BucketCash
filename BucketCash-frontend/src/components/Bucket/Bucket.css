@@ -1,0 +1,29 @@
+.bucket{
+  border: solid #191918 22px;
+  border-top: none;
+  border-radius: 0px 0px 40px 40px;
+  height: 15em;
+  width: 11em;
+  display: flex;
+  align-items: centre;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+
+.amount{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 13px;
+  width: calc(100% - 10px);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-family: Instrument Sans;
+  font-style: normal;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+  color: #000000;
+}
