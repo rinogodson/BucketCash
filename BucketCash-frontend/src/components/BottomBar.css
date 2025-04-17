@@ -1,4 +1,8 @@
 .bottombar {
     position: absolute;
     bottom: 0;
+    display: flex;
+    gap: 20px;
+    right: 0;
+    margin-inline: 30px;
 }
