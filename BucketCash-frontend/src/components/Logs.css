@@ -7,4 +7,18 @@
     padding: 10px 30px;
     border-bottom: none;
     display: flex;
+    flex-direction: column;
+    height: calc(2.5em + 40px);
+    height: fit-content;
+    transition: height 300ms ease;
+}
+
+.log {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 50px;
+    max-height: 20em;
+    overflow-y: scroll;
 }

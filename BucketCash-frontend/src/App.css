@@ -4,7 +4,9 @@
 }
 body {
     height: 100vh;
-    font-family: Instrument Sans;
+    font-family:
+        Instrument Sans,
+        sans-serif;
 }
 
 .button {

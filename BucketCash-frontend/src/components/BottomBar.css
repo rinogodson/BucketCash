@@ -1,5 +1,7 @@
 .bottombar {
+    height: calc(2.5em + 60px);
     position: absolute;
+    align-items: end;
     bottom: 0;
     display: flex;
     gap: 20px;
