@@ -2,7 +2,23 @@
 
 ## Project Structure:
 ```
-📦
+📦 
+├─ BucketCash-backend
+│  ├─ db
+│  │  └─ database.go
+│  ├─ go.mod
+│  ├─ go.sum
+│  ├─ handlers
+│  │  ├─ auth.go
+│  │  ├─ buckets.go
+│  │  └─ transfers.go
+│  ├─ main.go
+│  ├─ middleware
+│  │  └─ auth.go
+│  ├─ models
+│  │  └─ models.go
+│  └─ utils
+│     └─ jwt.go
 ├─ BucketCash-frontend
 │  ├─ .gitignore
 │  ├─ README.md
