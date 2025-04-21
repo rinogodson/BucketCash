@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
     setErr(null)
 
     try {
-      const response = await api.post('/api/login', credentials);
+      const response = await api.post('/api/auth/login', credentials);
       if (response.data.token) {
         saveToken(response.data.token, response.data.user);
         console.log("Logged in successfully")
