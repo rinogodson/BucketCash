@@ -12,9 +12,10 @@ export const AuthProvider = ({ children }) => {
   const [err, setErr] = useState(null);
 
 
-  const saveToken = (newToken, userDate) => {
+  const saveToken = (newToken, userData) => {
     setToken(newToken);
-    setUser(userDate);
+    setUser(userData);
+    localStorage.setItem('bucketcash_user', JSON.stringify(userData))
     localStorage.setItem('bucketcash_token', newToken);
 
     if (newToken) {
@@ -31,6 +32,7 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     setUser({});
     localStorage.removeItem('bucketcash_token');
+    localStorage.removeItem('bucketcash_user');
     delete api.defaults.headers.common['Authorization'];
     console.log("logged out successfully")
 
@@ -48,11 +50,11 @@ export const AuthProvider = ({ children }) => {
   const loginAction = async (credentials) => {
     setIsLoading(true);
     setErr(null)
-
     try {
       const response = await api.post('/api/auth/login', credentials);
       if (response.data.token) {
-        saveToken(response.data.token, response.data.user);
+        saveToken(response.data.token, response.data.username);
+        console.log(response.data.username)
         console.log("Logged in successfully")
         return true;
       }

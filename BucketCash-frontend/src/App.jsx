@@ -7,6 +7,7 @@ import { LoginPage } from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "./Dashboard";
+import DashProvider from "./context/DashContext";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           <Route path="/register" element={<SignupPage />} />
           <Route path="/dashboard" element={
             <ProtectedRoute>
-              <Dashboard />
+              <DashProvider>
+                <Dashboard />
+              </DashProvider>
             </ProtectedRoute>
           } />
           <Route path="*" element={<Navigate to="/" />} />
