@@ -14,20 +14,29 @@ function DashProvider({ children }) {
     isSelecting: false,
     trModal: false,
     crModal: false,
-    username: auth.user.name,
+    username: localStorage.getItem('bucketcash_user'),
   });
-  
+
 
   const createBucket = async (name, money) => {
     const { token } = auth
-    console.log(localStorage.getItem('bucketcash_user'))
     api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-    const response = await api.post('/api/buckets', { name, money });
+    const response = await api.post('/api/buckets', { Name: name, initialBalance: money });
+    refreshData()
+  }
+
+  const transfer = async (fromID, toID, amount) => {
+    const { token } = auth
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+
+    const response = await api.post('/api/transfer', { fromBucketId: fromID, toBucketId: toID, amount: amount });
+    refreshData()
   }
 
   useEffect(() => {
-    createBucket('test', 0)
+   // createBucket('A', 2000)
+  transfer(16, 15, 300)
   }, [])
 
   const refreshData = async () => {
@@ -38,8 +47,8 @@ function DashProvider({ children }) {
     const logsResponse = await api.get('/api/logs');
     setValue(prev => ({
       ...prev,
-      buckets: bucketsResponse.data.buckets, // Adjust based on your API response structure
-      logs: logsResponse.data.logs, // Adjust based on your API response structure
+      buckets: bucketsResponse.data.buckets,
+      logs: logsResponse.data.logs,
     }));
   }
 
@@ -48,6 +57,7 @@ function DashProvider({ children }) {
   }, [])
 
   useEffect(() => {
+    console.log(value)
   }, [value])
 
 
