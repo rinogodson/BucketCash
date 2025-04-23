@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Toolbar.css";
 import Button from "../Button";
 import ToolButton from "../ToolButton";
+import { DashContext } from "../../context/DashContext";
 
 function Toolbar() {
+  const dC = useContext(DashContext);
+
+  const newBucketHandler = () => {
+    dC.fns.setValue((prev) => ({ ...prev, crModal: true }));
+  };
+
   return (
     <>
-      <div className="toolbar">
-        <Button color="#548164" text="New Bucket" />
+      <div
+        className="toolbar"
+        style={{
+          background: dC.isDark ? "#191919" : "#f4f4f4",
+          borderColor: dC.isDark ? "#252525" : "#E3E3E3",
+        }}
+      >
+        <Button color="#548164" text="New Bucket" click={newBucketHandler} />
         <ToolButton
           icon={
             <svg

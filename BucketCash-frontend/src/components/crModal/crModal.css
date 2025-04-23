@@ -1,0 +1,43 @@
+.crModalBg {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.crModal {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+}
+
+.crModalHeader {
+    padding: 0;
+    margin: 0;
+}
+
+.crModalBody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.InputBox {
+    width: 10em;
+    height: 1em;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #f0f0f0;
+}

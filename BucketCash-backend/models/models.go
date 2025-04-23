@@ -19,6 +19,7 @@ type Bucket struct {
 	UserID  uint   `gorm:"not null"`
 	Name    string `gorm:"not null"`
 	Balance int64  `gorm:"default:0"`
+	Max     int64  `gorm:"default:10000"`
 	User    User   `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 }
 

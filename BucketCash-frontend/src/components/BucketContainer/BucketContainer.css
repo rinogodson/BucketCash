@@ -1,10 +1,9 @@
 .container {
-    background-color: black;
-    height: 100%;
+    height: fit-content;
     max-height: 80vh;
-    width: calc(100% - 100px);
+    width: calc(100vw - 200px);
     background-color: #f4f4f4;
-    border: solid 2px #e4e4e4;
+    border: solid 2px;
     border-radius: 20px;
     margin-block: 30px;
     overflow: scroll;

@@ -9,9 +9,9 @@ import (
 )
 
 type CreateBucketInput struct {
-	Name string `json:"name" binding:"required"`
-
-	InitialBalance int64 `json:"initialBalance"`
+	Name           string `json:"name" binding:"required"`
+	MaxAmount      int64  `json:"max"`
+	InitialBalance int64  `json:"initialBalance"`
 }
 
 func CreateBucket(c *gin.Context) {
@@ -37,6 +37,7 @@ func CreateBucket(c *gin.Context) {
 		UserID:  userIDUint,
 		Name:    input.Name,
 		Balance: input.InitialBalance,
+		Max:     input.MaxAmount,
 	}
 
 	result := db.DB.Create(&bucket)
