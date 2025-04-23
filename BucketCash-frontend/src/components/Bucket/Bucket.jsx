@@ -1,10 +1,10 @@
 import { DashContext } from "../../context/DashContext";
 import "./Bucket.css";
 import React, { useContext } from "react";
-export const Bucket = ({ perc, money, color, name, max }) => {
+export const Bucket = ({ click, perc, money, color, name, max }) => {
   const dC = useContext(DashContext);
   return (
-    <div className="bCont">
+    <div className="bCont" onClick={click}>
       <div
         className="bucket"
         style={{

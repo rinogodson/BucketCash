@@ -5,6 +5,7 @@ import CrModal from "./components/crModal/CrModal";
 import Logo from "./components/Logo";
 import Pond from "./components/Pond/Pond";
 import { DashContext } from "./context/DashContext";
+import TrModal from "./components/trModal/trModal";
 
 function Dashboard() {
   const dC = useContext(DashContext);
@@ -29,6 +30,7 @@ function Dashboard() {
       <BottomBar />
       <Pond />
       {dC.crModal && <CrModal />}
+      {dC.trModal && <TrModal />}
 
       <button
         onClick={() => {

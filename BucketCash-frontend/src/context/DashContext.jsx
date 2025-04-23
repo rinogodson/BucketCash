@@ -10,10 +10,12 @@ function DashProvider({ children }) {
     buckets: null,
     logs: [],
     isSelecting: false,
+    toID: 0,
+    fromID: 0,
     trModal: false,
     crModal: false,
     username: localStorage.getItem("bucketcash_user"),
-    isDark: true,
+    isDark: false,
   });
 
   const createBucket = async (name, money, max) => {

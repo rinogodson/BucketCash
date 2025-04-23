@@ -1,9 +1,9 @@
 import React from "react";
 
-const ToolButton = ({ icon, onClick }) => {
+const ToolButton = ({ click, icon }) => {
   return (
-    <button className="tool" onClick={onClick}>
-      {icon}
+    <button className="tool" onClick={click}>
+      {icon || "⚙️"}
     </button>
   );
 };

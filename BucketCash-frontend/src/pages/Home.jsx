@@ -7,15 +7,21 @@ export const Home = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <Logo />
       <div>
-        <Button text="Login" color={"#548164"} click={() => {
-          navigate('/login')
-        }}
+        <Button
+          text="Login"
+          color={"#548164"}
+          click={() => {
+            navigate("/login");
+          }}
         />
-        <Button text="Register" color={"#548164"} click={() => {
-          navigate('/register')
-        }}/>
+        <Button
+          text="Register"
+          color={"#548164"}
+          click={() => {
+            navigate("/register");
+          }}
+        />
       </div>
     </div>
   );
