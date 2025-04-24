@@ -28,7 +28,7 @@ function Toolbar() {
         <Button color="#548164" text="New Bucket" click={newBucketHandler} />
         <ToolButton
           click={mugHandler}
-          icon={<span style={{ color: "white" }}>🔄</span>}
+          icon={<span style={{ color: "white" }}>🍺</span>}
         />
       </div>
     </>

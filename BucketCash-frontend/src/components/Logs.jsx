@@ -3,6 +3,7 @@ import "./Logs.css";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { DashContext } from "../context/DashContext";
+
 const Logs = () => {
   const [open, isOpen] = React.useState(false);
   const dC = useContext(DashContext);
@@ -38,27 +39,53 @@ const Logs = () => {
 export default Logs;
 
 const LogComponent = () => {
+  const dC = useContext(DashContext);
+
+  const getBucketName = (bucketId) => {
+    const bucket = dC.buckets.find((b) => b.ID === bucketId);
+    return bucket ? bucket.Name : "Unknown";
+  };
   return (
-    <div className="log">
-      1. Transferred 1000 tokens to user123.
-      <br />
-      2. Received 500 tokens from user456.
-      <br />
-      3. Sent 200 tokens to user789.
-      <br />
-      4. Transferred 300 tokens to user101.
-      <br />
-      5. Received 100 tokens from user234.
-      <br />
-      6. Sent 150 tokens to user567.
-      <br />
-      7. Transferred 250 tokens to user890.
-      <br />
-      8. Received 75 tokens from user901.
-      <br />
-      9. Sent 100 tokens to user345.
-      <br />
-      10. Transferred 125 tokens to user678.
+    <div
+      className="log"
+      style={
+        dC.isDark
+          ? { background: "#191919", borderColor: "#252525" }
+          : { background: "#fff", borderColor: "#E3E3E3" }
+      }
+    >
+      {console.log(dC)}
+      {dC.logs.map((log) => (
+        <LogBlock
+          key={log.ID}
+          fromBucket={getBucketName(log.FromBucketID)}
+          toBucket={getBucketName(log.ToBucketID)}
+          amount={log.Amount / 100}
+          time={log.Timestamp}
+          note={""}
+        />
+      ))}
+    </div>
+  );
+};
+
+const LogBlock = ({ fromBucket, toBucket, amount, time, note }) => {
+  const dC = useContext(DashContext);
+  return (
+    <div
+      className={"log-block"}
+      style={
+        dC.isDark
+          ? { backgroundColor: "#191919", color: "white" }
+          : { backgroundColor: "#f4f4f4", color: "black" }
+      }
+    >
+      <h1 className="path">
+        {fromBucket} to {toBucket}
+      </h1>
+      <div className="log-note">{note}</div>
+      <div className="log-amount">{amount}</div>
+      <div className="log-time">{time}</div>
     </div>
   );
 };

@@ -22,3 +22,45 @@
     max-height: 20em;
     overflow-y: scroll;
 }
+
+.log-block {
+    background-color: #f4f4f4;
+    padding-inline: 20px;
+    border-radius: 20px;
+    height: 8em;
+    margin-block: 20px;
+    overflow-y: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+
+.path,
+.log-note,
+.log-amount,
+.log-time {
+    font-size: 20px;
+    height: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.log-amount {
+    font-size: 40px;
+    height: 1em;
+}
+
+.path {
+    height: 1em;
+}
+
+.log-time {
+    height: 1em;
+    font-size: 10px;
+    justify-self: flex-end;
+}
+
+.log-note {
+    height: 1em;
+}
