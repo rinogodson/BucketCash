@@ -32,12 +32,3 @@
     flex-direction: column;
     gap: 20px;
 }
-
-.InputBox {
-    width: 10em;
-    height: 1em;
-    font-size: 30px;
-    padding: 20px;
-    border-radius: 20px;
-    border: 2px solid #f0f0f0;
-}

@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../services/authService";
 import AuthContext from "../context/AuthContext";
+import { motion } from "framer-motion";
+
 function SignupPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -30,10 +32,31 @@ function SignupPage() {
   };
 
   return (
-    <>
-      <div>SignupPage</div>
-      <form onSubmit={handleSubmit}>
+    <motion.div
+      key="box"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.4 }}
+      style={{ background: "#548164" }}
+      className="homeBox"
+    >
+      <div style={{ color: "#A6FFC4", fontSize: "5em", fontWeight: "bold" }}>
+        <span style={{ color: "#fff" }}>Bucket</span>
+        Cash
+      </div>
+      <form
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "20px",
+        }}
+        onSubmit={handleSubmit}
+      >
         <input
+          className="InputBox"
           type="text"
           placeholder="Username"
           value={username}
@@ -41,6 +64,7 @@ function SignupPage() {
         />
 
         <input
+          className="InputBox"
           type="email"
           placeholder="Email"
           value={email}
@@ -48,18 +72,19 @@ function SignupPage() {
         />
 
         <input
+          className="InputBox"
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit" disabled={isLoading}>
+        <button className="SubmitBt" type="submit" disabled={isLoading}>
           {isLoading ? "Loading..." : "Sign Up"}
         </button>
         {error && <p>{error}</p>}
       </form>
-    </>
+    </motion.div>
   );
 }
 

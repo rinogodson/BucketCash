@@ -7,11 +7,15 @@ import Pond from "./components/Pond/Pond";
 import { DashContext } from "./context/DashContext";
 import TrModal from "./components/trModal/trModal";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 function Dashboard() {
   const dC = useContext(DashContext);
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 2 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.2 }}
       style={{
         position: "absolute",
         top: 0,
@@ -55,7 +59,7 @@ function Dashboard() {
       <Pond />
       {dC.crModal && <CrModal />}
       {dC.trModal && <TrModal />}
-    </div>
+    </motion.div>
   );
 }
 
