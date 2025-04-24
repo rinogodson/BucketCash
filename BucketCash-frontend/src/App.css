@@ -1,13 +1,14 @@
 #root {
     margin: 0 auto;
     padding: 0;
+    overflow: none;
 }
 body {
     height: 100vh;
     font-family:
         Instrument Sans,
         sans-serif;
-    overflow: none;
+    overflow-y: hidden;
 }
 
 .button {
@@ -35,4 +36,18 @@ body {
     border: none;
     border-radius: 30px;
     background-color: #0e0e0e;
+}
+
+.topbar {
+    width: 95%;
+    height: fit-content;
+    border: 2px solid;
+    border-bottom: 4px solid;
+    margin-top: 1vw;
+    padding: 0.5vw;
+    padding-inline: 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
 }

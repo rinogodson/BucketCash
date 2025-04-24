@@ -42,8 +42,13 @@ const LogComponent = () => {
   const dC = useContext(DashContext);
 
   const getBucketName = (bucketId) => {
-    const bucket = dC.buckets.find((b) => b.ID === bucketId);
-    return bucket ? bucket.Name : "Unknown";
+    if (bucketId === null) {
+      return "Pond";
+    } else {
+      const bucket = dC.buckets.find((b) => b.ID === bucketId);
+      console.log(dC);
+      return bucket ? bucket.Name : "Unknown";
+    }
   };
   return (
     <div

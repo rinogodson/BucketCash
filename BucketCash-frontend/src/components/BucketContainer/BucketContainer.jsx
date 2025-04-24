@@ -4,23 +4,30 @@ import { Bucket } from "../Bucket/Bucket";
 import { DashContext } from "../../context/DashContext";
 function BucketContainer() {
   const dC = useContext(DashContext);
-  const [lev, setLev] = React.useState(false);
+
   const bucketHandler = (id) => {
     console.log("Bucket clicked");
     if (dC.isSelecting) {
-      if (!lev) {
+      if (!dC.lev) {
         console.log("toID set");
         dC.fns.setValue((prev) => ({ ...prev, fromID: id }));
-        setLev(true);
+        dC.fns.setValue((prev) => ({
+          ...prev,
+          lev: true,
+        }));
       } else {
         console.log("fromID set");
         dC.fns.setValue((prev) => ({ ...prev, toID: id }));
-        setLev(false);
+        dC.fns.setValue((prev) => ({
+          ...prev,
+          lev: false,
+        }));
         dC.fns.setValue((prev) => ({ ...prev, trModal: true }));
         dC.fns.setValue((prev) => ({ ...prev, isSelecting: false }));
       }
     }
   };
+
   return (
     <div
       className="container"
@@ -37,7 +44,7 @@ function BucketContainer() {
               key={index}
               perc={(bucket.Balance * 100) / bucket.Max}
               money={bucket.Balance}
-              color={"#C4C4C4"}
+              color={"#7FA3C0"}
               name={bucket.Name}
               max={bucket.Max}
             />

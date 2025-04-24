@@ -12,6 +12,7 @@ function DashProvider({ children }) {
     isSelecting: false,
     toID: 0,
     fromID: 0,
+    lev: false,
     trModal: false,
     crModal: false,
     username: localStorage.getItem("bucketcash_user"),

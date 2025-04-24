@@ -10,7 +10,7 @@ export const Bucket = ({ click, perc, money, color, name, max }) => {
         style={{
           background: `linear-gradient(0deg, ${color} 0 ${perc}%, rgba(255, 255, 255, 0) ${perc}% 100%)`,
           border: "solid 22px",
-          borderColor: dC.isDark ? "#E3E3E3" : "#191918",
+          borderColor: dC.isDark ? "#333" : "#191918",
           borderTop: "none",
         }}
       >
