@@ -5,6 +5,7 @@ import (
 	"bucketcash/backend/handlers"
 	"bucketcash/backend/middleware"
 	"log"
+	"os"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -53,7 +54,7 @@ func main() {
 		})
 	})
 
-	port := "8080"
+	port := os.Getenv("PORT")
 	log.Printf("Server starting on port %s\n", port)
 	if err := router.Run(":" + port); err != nil {
 		log.Fatal("Failed to run server:", err)
