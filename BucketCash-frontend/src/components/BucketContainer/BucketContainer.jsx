@@ -9,14 +9,14 @@ function BucketContainer() {
     console.log("Bucket clicked");
     if (dC.isSelecting) {
       if (!dC.lev) {
-        console.log("toID set");
+        console.log("fromID set");
         dC.fns.setValue((prev) => ({ ...prev, fromID: id }));
         dC.fns.setValue((prev) => ({
           ...prev,
           lev: true,
         }));
       } else {
-        console.log("fromID set");
+        console.log("toID set");
         dC.fns.setValue((prev) => ({ ...prev, toID: id }));
         dC.fns.setValue((prev) => ({
           ...prev,
@@ -40,6 +40,7 @@ function BucketContainer() {
         dC.buckets.map((bucket, index) => {
           return (
             <Bucket
+              id={bucket.ID}
               click={() => bucketHandler(bucket.ID)}
               key={index}
               perc={(bucket.Balance * 100) / bucket.Max}

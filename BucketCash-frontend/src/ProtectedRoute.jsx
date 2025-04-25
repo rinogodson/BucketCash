@@ -1,25 +1,19 @@
-import React, {useContext} from "react"
+import React, { useContext } from "react";
 
-import { Navigate, useLocation } from "react-router-dom"
+import { Navigate, useLocation } from "react-router-dom";
 
-import AuthContext from "./context/AuthContext"
+import AuthContext from "./context/AuthContext";
 
-function ProtectedRoute({children}) {
-  const {token, isLoading} = useContext(AuthContext)
+function ProtectedRoute({ children }) {
+  const { token } = useContext(AuthContext);
 
-  const location = useLocation()
-  
+  const location = useLocation();
 
-  if(!token){
-    console.log("Not Logged in!")
-    return <Navigate to="/" state={{from: location}} replace />
+  if (!token) {
+    console.log("Not Logged in!");
+    return <Navigate to="/" state={{ from: location }} replace />;
   }
-
-
-
-  return (
-    children  
-  )
+  return children;
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;

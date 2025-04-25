@@ -28,6 +28,7 @@ function Dashboard() {
         justifyContent: "start",
         alignItems: "center",
         flexDirection: "column",
+        cursor: dC.isSelecting ? "none" : "default",
       }}
     >
       <div
@@ -51,6 +52,15 @@ function Dashboard() {
           <h2 style={{ color: dC.isDark ? "white" : "black" }}>
             {dC.username.replaceAll('"', "")}
           </h2>
+          <button
+            onClick={() => {
+              localStorage.removeItem("bucketcash_token");
+              window.location.reload();
+            }}
+            className="logout"
+          >
+            ❌
+          </button>
         </div>
       </div>
 

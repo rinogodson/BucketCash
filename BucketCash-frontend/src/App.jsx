@@ -20,26 +20,43 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key="gg">
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<SignupPage />} />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <DashProvider>
-                    <Dashboard />
-                  </DashProvider>
-                </ProtectedRoute>
-              }
-            />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </AnimatePresence>
+        <AppRoutes />
       </Router>
     </AuthProvider>
+  );
+}
+
+function AppRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key="gg">
+        <Route
+          path="/"
+          element={
+            localStorage.getItem("bucketcash_token") ? (
+              <Navigate to="/dashboard" state={{ from: location }} replace />
+            ) : (
+              <Home />
+            )
+          }
+        />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<SignupPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashProvider>
+                <Dashboard />
+              </DashProvider>
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </AnimatePresence>
   );
 }
 

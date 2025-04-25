@@ -19,6 +19,7 @@ const TrModal = () => {
       Number(transferDetails.amount * 100),
     );
     dC.fns.setValue((prev) => ({ ...prev, trModal: false }));
+    dC.fns.setValue((prev) => ({ ...prev, fromID: 0, toID: 0 }));
   };
 
   return (
@@ -45,9 +46,10 @@ const TrModal = () => {
             <Button
               text={"Cancel"}
               color={"#C4C4C4"}
-              click={() =>
-                dC.fns.setValue((prev) => ({ ...prev, trModal: false }))
-              }
+              click={() => {
+                dC.fns.setValue((prev) => ({ ...prev, trModal: false }));
+                dC.fns.setValue((prev) => ({ ...prev, fromID: 0, toID: 0 }));
+              }}
             />
             <Button text={"Submit"} color={"green"} click={handleSubmit} />
           </div>

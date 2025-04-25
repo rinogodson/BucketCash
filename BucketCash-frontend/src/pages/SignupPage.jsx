@@ -20,6 +20,7 @@ function SignupPage() {
     setAuthError(null);
     setError(null);
     setIsLoading(true);
+    navigate("/login");
 
     try {
       await registerUser({ username, email, password });
