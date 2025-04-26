@@ -1,6 +1,26 @@
-# BucketCash
+# 🪣 BucketCash
+*Keep your money inside buckets and manage it productively. Just a simple financing app for those dumb Brainrots. \s*
+## 🚀 Features
+- **Pond**: *You got income or made an expense, blame all of it to the pond. Nothing complicated, take ~water~ money from pond, put money to the pond. It's richer than Musk.*
+- **Logs**: *Need to show your mom where your money went? use logs!!*
+- **Mug**: *Pickup the Mug tool and take ~water~ money from one bucket to another.*
+- **Dark Mode**: The name says it all!
 
-## Project Structure:
+## 🛠️ Demo  
+[Click me!!! click me!! :)](https://bucketcash.netlify.app/)
+
+
+## 📚 Usage  
+First, register.
+Then log in, add your buckets, and use the Mug to transfer money!
+Use the Pond for income and expenses, and the Logs to keep track of everything (obviously).
+
+**NOTE:**
+In the transfer window, the first number input is for the initial money, and the second is for the maximum money the bucket can hold.
+(Technically, a bucket can hold infinite money — but that would just be annoying. *Source: trust me bro!*)
+
+
+## 📦 Project Structure:
 ```
 📦
 ├── BucketCash-backend
@@ -79,3 +99,26 @@
 ├── package.json
 └── README.md
 ```
+
+
+
+## 🤝 Contributing  
+Contributions are welcome! Please fork the repository and submit a pull request.  
+
+1. Fork the project.  
+2. Create a new branch:  
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. Commit your changes:  
+   ```bash
+   git commit -m "Add some feature"
+   ```
+4. Push the branch:  
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+5. Open a pull request.
+
+## 📄 License  
+This project is licensed under the [MIT License](LICENSE).
