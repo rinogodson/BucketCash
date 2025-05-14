@@ -36,6 +36,13 @@ export const Home = () => {
           }}
         />
       </div>
+      <p
+        style={{
+          color: "#A6FFC4",
+          fontSize: "1.5em",
+          fontWeight: "bold",
+        }}
+      >No need to share your personal email, use a fake one</p>
       <a
         style={{
           color: "#A6FFC4",
